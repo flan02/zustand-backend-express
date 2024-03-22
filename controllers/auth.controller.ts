@@ -9,8 +9,18 @@ export const loginHandler = (req: Request, res: Response) => {
   // ? generamos un token (jwt)
   const token = jwt.sign({
     test: 'test' // almacenamos la info del usuario en un objeto
-  }, 'oursecret', {// (bcrypt) generamos un token con la info del usuario
+  }, 'oursecret', { // (bcrypt) generamos un token con la info del usuario
     expiresIn: 60 * 60 * 24 // 24 horas
   })
   return res.json({ token })
+}
+
+export const profileHandler = (req: Request, res: Response) => {
+
+  return res.json({
+    profile: {
+      user: req.user // send the user info to the client
+    },
+    message: 'profile data'
+  })
 }

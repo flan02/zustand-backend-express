@@ -1,7 +1,7 @@
 import express from 'express'
-import authRoutes from './routes/auth.route'
+import authRouter from './routes/auth.route'
 
 const app = express()
-app.use(authRoutes)
+app.use(authRouter)
 
 export default app
